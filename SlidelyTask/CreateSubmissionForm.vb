@@ -9,9 +9,9 @@ Public Class CreateSubmissionForm
     Public Sub New()
         InitializeComponent()
         AddHandler timer.Tick, AddressOf TimerTick
-        timer.Interval = 1000 ' 1 second interval
+        timer.Interval = 1000 
 
-        ' Enable KeyPreview for the form to capture keyboard events
+        
         Me.KeyPreview = True
     End Sub
 
@@ -34,7 +34,7 @@ Public Class CreateSubmissionForm
     End Sub
 
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
-        SubmitForm() ' Call the async method directly
+        SubmitForm() 
     End Sub
 
     Private Async Sub SubmitForm()
@@ -47,12 +47,12 @@ Public Class CreateSubmissionForm
     End Sub
 
     Private Sub CreateSubmissionForm_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-        ' Handle key presses here
+       
         If e.Control AndAlso e.KeyCode = Keys.T Then
-            ' Ctrl + T pressed - Toggle stopwatch
+            
             ToggleStopwatch()
         ElseIf e.Control AndAlso e.KeyCode = Keys.S Then
-            ' Ctrl + S pressed - Submit form
+            
             SubmitForm()
         End If
     End Sub
